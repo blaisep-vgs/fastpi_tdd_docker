@@ -8,9 +8,8 @@ from app.config import get_settings, Settings
 
 app = FastAPI()
 
-
 @app.get("/ping")
-def pong(settings: Settings = Depends(get_settings)):
+async def pong(settings: Settings = Depends(get_settings)):
     return {
         "ping": "pong!",
         "environment": settings.environment,
