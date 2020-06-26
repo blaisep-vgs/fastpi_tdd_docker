@@ -1,6 +1,7 @@
 # project/tests/test_summaries.py
 import json
 
+
 def test_create_summary(test_app_with_db):
     response = test_app_with_db.post(
         "/summaries/", data=json.dumps({"url": "https://foo.bar"})
@@ -35,6 +36,7 @@ def test_read_summary(test_app_with_db):
     assert response_dict["url"] == "https://foo.bar"
     assert response_dict["summary"]
     assert response_dict["created_at"]
+
 
 def test_read_summary_incorrect_id(test_app_with_db):
     response = test_app_with_db.get("/summaries/999/")
