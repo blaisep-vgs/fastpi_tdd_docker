@@ -1,4 +1,5 @@
-# project/tests/test_ping.py
+#  project/tests/test_ping.py
+
 
 def test_ping(test_app):
     response = test_app.get("/ping")
